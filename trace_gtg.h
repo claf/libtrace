@@ -4,11 +4,17 @@
 #include <GTG.h>
 
 void gtg_init ();
-void mjpeg_gtg_init ();
+void gtg_finalize ();
+void gtg_threadTrace_init ();
+void gtg_frameTrace_init ();
 void doEvent(char* op, int value);
+void doFrameEvent(char* op, int value);
 void doVar(int value);
 void doState(char* state, int tid);
+void doFrameState(char* state, int tid);
 void linkStart(char* thr, int frame_id);
 void linkEnd(int frame, int tid);
+void popFrameState (char* state, int fid);
+void popFrameState (char* state, int fid);
 
 #endif
