@@ -18,7 +18,6 @@ void gtg_init ()
 
   if (is_init == 0)
   {
-    printf ("Init\n");
     setTraceType (PAJE);
     initTrace ("trace", 0, GTG_FLAG_NONE);
 
