@@ -3,7 +3,7 @@
 
 #include "trace_gtg.h"
 
-#define MAX_FRAME 3050
+#define MAX_FRAME 5000
 
 /* TODO : create this function to mask use of clock_gettime or GET_TICK
  * void mjpeg_elapsed_ns ();
@@ -62,15 +62,17 @@ void gtg_frameTrace_init ()
 {
   char buf[10];
 
-  for (int i=0; i < MAX_FRAME; i++)
+  for (int i=-1; i < MAX_FRAME; i++)
   {
     sprintf (buf, "F%d", i);
     addContainer (0, buf, "F", "0", buf, "0");
   }
 
-  addEntityValue ("F", "SF", "Fetch", GTG_BLUE);
+  addEntityValue ("F", "SF", "Fetch", GTG_LIGHTGREY);
+  addEntityValue ("W", "SF", "Wait", GTG_KAKI);
   addEntityValue ("Rs", "SF", "Resize", GTG_GREEN);
   addEntityValue ("De", "SF", "Decode", GTG_BLUE);
+  addEventType ("M", "F", "Marker");
   addEventType ("N", "F", "Next");
   addEventType ("P", "F", "Print");
   addEventType ("D", "F", "Drop");

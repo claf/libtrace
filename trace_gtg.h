@@ -14,7 +14,7 @@ void doState(char* state, int tid);
 void doFrameState(char* state, int tid);
 void linkStart(char* thr, int frame_id);
 void linkEnd(int frame, int tid);
-void popFrameState (char* state, int fid);
+void pushFrameState (char* state, int fid);
 void popFrameState (char* state, int fid);
 
 #endif
