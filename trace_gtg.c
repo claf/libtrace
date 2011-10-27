@@ -3,8 +3,6 @@
 
 #include "trace_gtg.h"
 
-#define MAX_FRAME 5000
-
 /* TODO : create this function to mask use of clock_gettime or GET_TICK
  * void mjpeg_elapsed_ns ();
  * */
@@ -58,11 +56,11 @@ void gtg_threadTrace_init ()
   addLinkType ("F", "Fetch", "T", "T", "T");
 }
 
-void gtg_frameTrace_init ()
+void gtg_frameTrace_init (int nb_frames)
 {
   char buf[10];
 
-  for (int i=-1; i < MAX_FRAME; i++)
+  for (int i=-1; i < nb_frames; i++)
   {
     sprintf (buf, "F%d", i);
     addContainer (0, buf, "F", "0", buf, "0");
