@@ -3,7 +3,7 @@
 
 #include <GTG.h>
 
-void gtg_init ();
+void gtg_init (char* filename);
 void gtg_finalize ();
 void gtg_threadTrace_init ();
 void gtg_frameTrace_init ();

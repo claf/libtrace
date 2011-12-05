@@ -9,7 +9,7 @@
 
 static uint64_t epoc = 0;
 
-void gtg_init ()
+void gtg_init (char* filename)
 {
   static int is_init = 0;
   struct timeval time;
@@ -17,7 +17,7 @@ void gtg_init ()
   if (is_init == 0)
   {
     setTraceType (PAJE);
-    initTrace ("trace", 0, GTG_FLAG_NONE);
+    initTrace (filename, 0, GTG_FLAG_NONE);
 
     /* For Gantt trace : */
     addContType ("T", "0", "Thread");
